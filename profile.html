@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Profile Cá Nhân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color:  #f3f4f6;;
+      --bg-color: #f9fafb;
+      --text-color: #1f2937;
+      --subtext-color: #6b7280;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      line-height: 1.6;
+    }       
+
+   .container {
+      position: relative; /* Quan trọng để định vị video bên trong */
+      overflow: hidden;   /* Đảm bảo không bị tràn */
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: transparent; /* Xoá nền trắng để thấy video */
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);   
+    }
+
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px; /* Để bo góc khớp với container */
+      opacity: 0.4; /* Độ trong suốt để nội dung phía trên dễ đọc */
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+   h1 {
+      font-size: 36px;
+      margin: 10px 0;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    p.title {
+      font-size: 18px;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    p.description {
+      font-size: 16px;
+      color: #f3f4f6;
+      margin-bottom: 30px;
+      padding: 0 20px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color:#f3f4f6;;
+      font-style: italic;
+    } 
+
+    .social-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            margin: 5px;
+            border: 2px solid #ccc;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            background-color: white; /* Nền trắng giúp logo nổi hơn */
+        }
+
+        .social-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-img {
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }   
+
+        .content-wrapper {
+          position: relative;
+          z-index: 1;
+        }
+        .video-background {
+          pointer-events: none; /* Không chặn click chuột */
+        }
+
+        .video-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4); /* Lớp phủ đen mờ */
+          z-index: 0;
+          border-radius: 12px;
+          pointer-events: none;
+        }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="video-background">
+      <video autoplay muted loop>
+        <source src="background/backgroundkhoi.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+    </div>
+    <div class="video-overlay"></div> <!-- Lớp phủ -->
+
+
+    <div class="content-wrapper"> <!-- Thêm lớp này -->
+      <img src="img/giangtuixach.jpg" alt="Ảnh đại diện" class="profile-img">
+      <h1>Phạm Thanh Giang</h1>
+      <p class="title">Email: giangptps22938@gmail.com</p>
+      <p class="description">
+        Xin chào! Tôi là một người trầm tính, vui vẻ, hòa đồng, dễ gần. <br>
+        Sở thích: Chơi thể thao, chơi game.
+      </p>
+
+      <a href="https://www.facebook.com/cuctrinho/" class="social-button" target="_blank">
+          <img src="img/logofb.png" alt="Facebook">
+      </a>
+
+      <a href="https://www.youtube.com/@gocnhincuaGiang" class="social-button" target="_blank">
+          <img src="img/logoyoutobe.jpg" alt="YouTube">
+      </a>
+
+      <a href="https://www.tiktok.com/@gocnhincuagiang?lang=vi-VN" class="social-button" target="_blank">
+          <img src="img/lgtt.jpg" alt="TikTok">
+      </a>
+
+      <footer>
+        &copy; 2025 Pham Thanh Giang. All rights reserved.
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
